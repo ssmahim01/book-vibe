@@ -1,3 +1,4 @@
+import { key } from "localforage";
 import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
@@ -11,9 +12,9 @@ const Book = ({ book }) => {
         </figure>
         <div className="card-body">
           <div className="flex justify-center items-center gap-4">
-            {tags.map((tag) => (
-              <button className="btn btn-xs bg-lime-100 text-lime-500 font-bold">
-                {tags}
+            {tags.map((tag, index) => (
+              <button key={index} className="btn btn-xs bg-lime-100 text-lime-500 font-bold">
+                {tag}
               </button>
             ))}
           </div>
