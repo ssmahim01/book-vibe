@@ -6,11 +6,11 @@ const Book = ({ book }) => {
 
   return (
     <Link to={`/books/${bookId}`}>
-      <div className="card bg-base-100 w-96 shadow-xl p-6">
+      <div className="card bg-base-100 shadow-sm p-6 border border-gray-300 rounded-2xl my-8">
         <figure className="bg-slate-100 py-8 rounded-2xl">
           <img src={image} className="h-[166px]" alt={bookName} />
         </figure>
-        <div className="card-body">
+        <div className="py-3 space-y-3 ml-2">
           <div className="flex justify-center items-center gap-4">
             {tags.map((tag, index) => (
               <button key={index} className="btn btn-xs bg-lime-100 text-lime-500 font-bold">
