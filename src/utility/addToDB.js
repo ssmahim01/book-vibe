@@ -42,4 +42,4 @@ const addToStoredList2 = (id) => {
     }
 }
 
-export { addToStoredList, addToStoredList2 };
+export { addToStoredList, addToStoredList2, getStoredReadList };
