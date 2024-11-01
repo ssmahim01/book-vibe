@@ -43,10 +43,10 @@ const ListedBooks = () => {
 
   return (
     <div>
-      <h3 className="text-3xl my-8">Listed Books</h3>
+      <h3 className="text-3xl my-8 text-center font-bold bg-slate-100 p-7 rounded-2xl">Listed Books</h3>
 
       <div className="dropdown flex justify-center items-center">
-        <div tabIndex={0} role="button" className="btn m-1">
+        <div tabIndex={0} role="button" className="btn m-1 bg-lime-500 text-white font-bold mb-12">
           {sort ? `Sort By: ${sort}` : 'Sort By'}
         </div>
         <ul
