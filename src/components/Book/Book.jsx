@@ -2,7 +2,7 @@ import { key } from "localforage";
 import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
-  const { bookId, bookName, author, image, tags, category } = book;
+  const { bookId, bookName, author, image, tags, category, rating, totalPages, yearOfPublishing } = book;
 
   return (
     <Link to={`/books/${bookId}`}>
@@ -22,13 +22,20 @@ const Book = ({ book }) => {
             {bookName}
             <div className="badge badge-secondary">NEW</div>
           </h2>
-          <p className="text-gray-700 font-medium">By: {author}</p>
+          <p className="text-lg text-gray-700 font-medium">By: {author}</p>
 
-          <div className="border-t-2 border-dashed border-gray-200 my-4"></div>
+          <div className="flex justify-between items-center">
+            <p className="text-lg text-gray-600 font-medium">Pages: {totalPages}</p>
+            <p className="text-lg text-gray-600 font-medium">Publish: {yearOfPublishing}</p>
+            </div>
+
+          <div className="border-t-2 border-dashed border-gray-200 my-3"></div>
 
           <div className="card-actions justify-between">
-            <div className="badge-outline">{category}</div>
+            <div className="badge-outline text-gray-800 text-xl font-semibold">{category}</div>
+
             <div className="rating">
+            <p className="text-lg text-gray-600 font-medium mr-2">{rating}</p>
               <input
                 type="radio"
                 name="rating-2"
