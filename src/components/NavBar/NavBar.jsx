@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
+import './NavBar.css';
 
 const NavBar = () => {
         const links = <>
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/listedBooks">Listed Books</NavLink></li>
-            <li><NavLink to="/dashboard">Pages to Read</NavLink></li>
             </>
 
   return (
@@ -12,7 +12,7 @@ const NavBar = () => {
     <div className="navbar bg-base-100 my-4">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-info lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -35,16 +35,16 @@ const NavBar = () => {
            {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl font-bold">Book Vibe</a>
+        <a className="btn btn-ghost md:text-2xl text-xl font-bold">Book Vibe</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="flex justify-between items-center gap-8 px-1 font-medium active-btn">
          {links}
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-lime-500 text-white font-bold px-5">Sign In</a>
-        <a className="btn bg-blue-300 text-white font-bold px-5 ml-3">Sign Up</a>
+        <a className="btn bg-lime-500 text-white font-bold md:px-5">Sign In</a>
+        <a className="btn bg-blue-300 text-white font-bold md:px-5 ml-3">Sign Up</a>
       </div>
     </div>
   );

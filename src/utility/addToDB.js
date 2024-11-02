@@ -13,12 +13,12 @@ const getStoredReadList = () => {
 const addToStoredList = (id) => {
   const storedList = getStoredReadList();
   if (storedList.includes(id)) {
-    console.log(id, "already exists in the read list");
+    toast.error("Already exists in the read list");
   } else {
     storedList.push(id);
     const storedListStr = JSON.stringify(storedList);
     localStorage.setItem("read-list", storedListStr);
-    toast('This book is added to your read list')
+    toast.success('Added to your read list');
   }
 };
 
@@ -36,13 +36,14 @@ const getStoredWishlist = () => {
 const addToStoredList2 = (id) => {
     const storedList = getStoredWishlist();
     if(storedList.includes(id)){
-        console.log(id, 'already exists in the wish list');
+        toast.error('Already exists in the wishlist');
     }
     else{
         storedList.push(id);
         const storedListStr = JSON.stringify(storedList);
         localStorage.setItem('wish-list', storedListStr);
+        toast.success('Added to your wishlist');
     }
 }
 
-export { addToStoredList, addToStoredList2, getStoredReadList };
+export { addToStoredList, addToStoredList2, getStoredReadList, getStoredWishlist };
