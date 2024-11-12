@@ -61,7 +61,7 @@ const ListedBooks = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-[calc(100vh-380px)]">
       <h3 className="text-3xl my-8 text-center font-bold bg-slate-100 p-7 rounded-2xl">Listed Books</h3>
 
       <div className="dropdown flex justify-center items-center">
