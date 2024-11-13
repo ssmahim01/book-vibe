@@ -89,7 +89,7 @@ const NavBar = () => {
 
           <div className="flex gap-3 items-center">
           <div className="flex flex-col">
-            <p className="text-sm font-semibold hidden md:block">{user?.displayName}</p>
+            <p className="text-sm font-semibold hidden md:block text-center">{user?.displayName}</p>
             <p className="text-sm font-semibold hidden md:block">{user?.email}</p>
           </div>
           <img className="w-12 rounded-full" src={user?.photoURL} alt={user?.displayName} />
