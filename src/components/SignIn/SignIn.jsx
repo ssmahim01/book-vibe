@@ -90,7 +90,7 @@ const SignIn = () => {
         <div className="divider divider-primary w-4/5 mx-auto text-gray-600 font-semibold">Or</div>
 
         <div className="w-4/5 mx-auto">
-            <button onClick={handleSignInWithGithub} className="w-full text-white font-bold btn btn-info md:px-6 text-center">Sign In With Github <span className="text-2xl ml-2"><FaGithub /></span></button>
+            <button onClick={handleSignInWithGithub} className="w-full text-white font-bold btn btn-secondary md:px-6 text-center">Sign In With Github <span className="text-2xl ml-2"><FaGithub /></span></button>
         </div>
         <form onSubmit={handleSignInByEmailPass} className="card-body">
           <div className="form-control">
