@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 
 const NavBar = () => {
   const { user, signOutUser } = useContext(AuthContext);
+  console.log(user?.email, user?.photoURL);
 
   const handleSignOut = () => {
     signOutUser()
@@ -36,7 +37,7 @@ const NavBar = () => {
     <div className="navbar bg-base-100 my-4">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-info lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-info text-white lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -59,7 +60,7 @@ const NavBar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost md:text-2xl text-xl font-bold">Book Vibe</a>
+        <a className="btn btn-ghost md:text-2xl text-lg font-bold">Book Vibe</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex justify-between items-center gap-8 px-1 font-medium active-btn">
@@ -84,10 +85,19 @@ const NavBar = () => {
          </>
         ) : (
          <>
-          <div>
+          <div className="flex gap-4 justify-center items-center">
+
+          <div className="flex gap-3 items-center">
+          <div className="flex flex-col">
+            <p className="text-sm font-semibold hidden md:block">{user?.displayName}</p>
+            <p className="text-sm font-semibold hidden md:block">{user?.email}</p>
+          </div>
+          <img className="w-12 rounded-full" src={user?.photoURL} alt={user?.displayName} />
+          </div>
+
             <button
               onClick={handleSignOut}
-              className="btn btn-warning text-white font-bold"
+              className="btn btn-error text-white font-bold lg:ml-0 md:ml-12"
             >
               Sign Out
             </button>

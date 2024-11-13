@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import SignUp from "./components/SignUp/SignUp";
 import SignIn from "./components/SignIn/SignIn";
 import Provider from "./providers/Provider";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,12 +27,12 @@ const router = createBrowserRouter([
       {
         path: "books/:bookId",
         loader: () => fetch("/booksData.json"),
-        element: <BookDetails></BookDetails>,
+        element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
       },
       {
         path: "listedBooks",
         loader: () => fetch("/booksData.json"),
-        element: <ListedBooks></ListedBooks>,
+        element: <PrivateRoute><ListedBooks></ListedBooks></PrivateRoute>,
       },
       {
         path: "signUp",
